@@ -5,6 +5,7 @@ export const styles = StyleSheet.create({
     backgroundColor: "#ffffff",
     paddingVertical: 16,
   },
+
   header: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -12,6 +13,7 @@ export const styles = StyleSheet.create({
     padding: 16,
     backgroundColor: "#fff",
   },
+  
   title: {
     fontSize: 20,
     fontWeight: "bold",
@@ -21,9 +23,11 @@ export const styles = StyleSheet.create({
     color: "#888",
     marginTop: 5,
   },
+
   logoutButton: {
     alignItems: "center",
   },
+
   logoutText: {
     fontSize: 12,
     color: "black",

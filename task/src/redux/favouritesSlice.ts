@@ -20,9 +20,9 @@ const favoritesSlice = createSlice({
       );
 
       if (index === -1) {
-        state.favoriteEvents.push(event); // Add to favorites
+        state.favoriteEvents.push(event); 
       } else {
-        state.favoriteEvents.splice(index, 1); // Remove from favorites
+        state.favoriteEvents.splice(index, 1); 
       }
     },
   },

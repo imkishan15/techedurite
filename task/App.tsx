@@ -5,8 +5,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { Provider } from "react-redux";
 import store from "./src/redux/store";
 import HeaderLayout from "./src/components/Main/Header";
-import Tabs from "./src/components/Main/Tabs";
 import LoginScreen from "./src/components/Login/Login";
+import Tabs from "./src/components/Main/Tabs";
 
 const Stack = createStackNavigator();
 
@@ -20,10 +20,9 @@ const MainScreen = () => (
 export default function App() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <Toast />
       <Provider store={store}>
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="Main">
+          <Stack.Navigator initialRouteName="Login">
             <Stack.Screen name="Login" component={LoginScreen} />
             <Stack.Screen
               name="Main"

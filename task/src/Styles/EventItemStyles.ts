@@ -13,32 +13,39 @@ export const styles = StyleSheet.create({
     shadowRadius: 4,
     elevation: 2,
   },
+
   image: {
     width: 80,
     height: 80,
     borderRadius: 10,
     marginRight: 10,
   },
+
   detailsContainer: {
     flex: 1,
   },
+
   eventName: {
     fontSize: 14,
     fontWeight: "bold",
     color: "#000",
   },
+
   date: {
     fontSize: 12,
     color: "green",
   },
+
   price: {
     fontSize: 12,
     color: "#888",
   },
+
   tagsContainer: {
     flexDirection: "row",
     marginTop: 5,
   },
+
   tag: {
     backgroundColor: "#f1f1f1",
     paddingHorizontal: 8,
@@ -46,23 +53,28 @@ export const styles = StyleSheet.create({
     borderRadius: 10,
     marginRight: 5,
   },
+
   tagText: {
     fontSize: 10,
     color: "#555",
   },
+
   rightSection: {
     alignItems: "flex-end",
     justifyContent: "space-between",
   },
+
   location: {
     fontSize: 12,
     color: "#888",
     marginTop: 5,
   },
+
   iconsContainer: {
     flexDirection: "row",
     marginTop: 10,
   },
+
   iconSpacing: {
     marginRight: 10,
   },

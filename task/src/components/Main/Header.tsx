@@ -1,10 +1,10 @@
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { RootParamList } from "../../utils/types";
-import { styles } from "../styles/HeaderStyles";
+import { styles } from "../../Styles/HeaderStyles";
 
 type NavigationProps = StackNavigationProp<RootParamList, "Main">;
 
@@ -20,9 +20,7 @@ const HeaderLayout = ({ children }: any) => {
       <View style={styles.header}>
         <View>
           <Text style={styles.title}>Hello Renzo!</Text>
-          <Text style={styles.description}>
-            Are you ready to dance?
-          </Text>
+          <Text style={styles.description}>Are you ready to dance?</Text>
         </View>
         <TouchableOpacity style={styles.logoutButton} onPress={handleLogout}>
           <Ionicons name="log-out-outline" size={24} color="black" />

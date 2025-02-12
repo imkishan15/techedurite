@@ -17,7 +17,7 @@ export type Event = {
   event_price_to: number;
   readable_from_date: string;
   readable_to_date: string;
-  isFavorite: number; // You may change this to boolean if needed
+  isFavorite: number; 
   city: string;
   country: string;
   keywords: string[];

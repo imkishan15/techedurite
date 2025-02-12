@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { ActivityIndicator, FlatList, Text, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../../../../redux/store";
-import EventItem from "../../Common/EventItem";
-import { fetchEvents } from "../../../../utils/api";
+import { AppDispatch, RootState } from "../../../redux/store";
+import EventItem from "../Common/EventItem";
+import { fetchEvents } from "../../../utils/api";
 
 const EventList = () => {
   const dispatch = useDispatch<AppDispatch>();

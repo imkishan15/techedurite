@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { Button } from "react-native-paper";
-import { styles } from "../styles/LoginStyles";
+import { styles } from "../../Styles/LoginStyles";
 import { loginUser } from "../../utils/api";
-import Toast from "react-native-toast-message";
 
 const LoginScreen = ({ navigation }: any) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -13,18 +12,12 @@ const LoginScreen = ({ navigation }: any) => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleLogin = async () => {
-    setErrorMessage(""); // Reset previous error
+    setErrorMessage("");
     try {
       const data = await loginUser(email, password);
       if (!data.success) {
-        setErrorMessage(data.message); // Show error message
+        setErrorMessage(data.message);
       } else {
-        Toast.show({
-          type: "success",
-          text1: "Success",
-          text2: "You have logged in successfully!",
-        });
-        // Navigate to List.tsx after a short delay
         navigation.navigate("Main");
       }
     } catch (error: any) {
@@ -54,7 +47,6 @@ const LoginScreen = ({ navigation }: any) => {
           value={email}
           onChangeText={setEmail}
         />
-
         <Text>Password</Text>
         <View style={styles.passwordContainer}>
           <TextInput
@@ -75,13 +67,10 @@ const LoginScreen = ({ navigation }: any) => {
             />
           </TouchableOpacity>
         </View>
-
-        {/* Forgot Password */}
         <TouchableOpacity>
           <Text style={styles.forgotText}>Forgot Password?</Text>
         </TouchableOpacity>
 
-        {/* Sign In Button */}
         <Button
           mode="contained"
           style={styles.signInButton}
@@ -89,8 +78,6 @@ const LoginScreen = ({ navigation }: any) => {
         >
           Sign In
         </Button>
-
-        {/* Sign Up Link */}
         <Text style={styles.signupText}>
           Not a member? <Text style={styles.signupLink}>Sign Up Here</Text>
         </Text>
@@ -113,7 +100,6 @@ const LoginScreen = ({ navigation }: any) => {
           </TouchableOpacity>
         </View>
 
-        {/* Guest Login */}
         <TouchableOpacity>
           <Text style={styles.guestText}>Enter as Guest</Text>
         </TouchableOpacity>

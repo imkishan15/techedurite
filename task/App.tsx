@@ -1,20 +1,38 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { createStackNavigator } from "@react-navigation/stack";
+import { SafeAreaView, View } from "react-native";
+import Toast from "react-native-toast-message";
+import { NavigationContainer } from "@react-navigation/native";
+import { Provider } from "react-redux";
+import store from "./src/redux/store";
+import HeaderLayout from "./src/components/Main/Header";
+import Tabs from "./src/components/Main/Tabs";
+import LoginScreen from "./src/components/Login/Login";
+
+const Stack = createStackNavigator();
+
+const MainScreen = () => (
+  <View style={{ flex: 1, gap: 20 }}>
+    <HeaderLayout />
+    <Tabs />
+  </View>
+);
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Hello World!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <Toast />
+      <Provider store={store}>
+        <NavigationContainer>
+          <Stack.Navigator initialRouteName="Main">
+            <Stack.Screen name="Login" component={LoginScreen} />
+            <Stack.Screen
+              name="Main"
+              component={MainScreen}
+              options={{ headerShown: false }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </Provider>
+    </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
